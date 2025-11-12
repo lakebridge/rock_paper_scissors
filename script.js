@@ -1,5 +1,5 @@
-alert("Script loaded!");
-console.log("Hello World");
+// alert("Script loaded!");
+// console.log("Hello World");
 
 function getComputerChoice() {
     a = Math.random()
@@ -21,12 +21,12 @@ function processGame(CC, playerChoice) {
 
         case "rock":
         console.log("Congrats! You win");
-        humanScore++;
+        // humanScore++;
         break;
 
         case "paper":
         console.log("the Computer wins! Sorry")
-        computerScore++;
+        // computerScore++;
         break;
 
         default:
@@ -40,12 +40,12 @@ function processGame(CC, playerChoice) {
 
         case "paper":
         console.log("Congrats! You win");
-        humanScore++;
+        // humanScore++;
         break;
 
         case "scissors":
         console.log("the Computer wins! Sorry")
-        computerScore++;
+        // computerScore++;
         break;
 
         default:
@@ -60,12 +60,12 @@ function processGame(CC, playerChoice) {
 
         case "scissors":
         console.log("Congrats! You win");
-        humanScore++;
+        // humanScore++;
         break;
 
         case "rock":
         console.log("the Computer wins! Sorry")
-        computerScore++;
+        // computerScore++;
         break;
 
         default:
@@ -74,17 +74,46 @@ function processGame(CC, playerChoice) {
     
     }
       
-    console.log ("Your New Score is = " + humanScore + ", and the Computer's Score is = " + computerScore)
+    // console.log ("Your New Score is = " + humanScore + ", and the Computer's Score is = " + computerScore)
 }
 
-let humanScore = 0;
-let computerScore = 0;
-for (let i = 0; i < 5; i++) {
-  console.log("Round:", i);
-  let CC = getComputerChoice();
-  let playerChoice = prompt("Choose rock, paper, or scissors:").toLowerCase();
-  console.log("You Choice is: " + playerChoice + ", The Computer's choice is:" + CC);
-  processGame(CC, playerChoice);
+
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+let CC = getComputerChoice();
+
+rock.addEventListener("click", () => {
+    processGame(CC, "rock")
+    console.log("You Choice is: rock, The Computer's choice is:" + CC);
 }
+);
+paper.addEventListener("click", () => {
+    processGame(CC, "paper")
+    console.log("You Choice is: paper, The Computer's choice is:" + CC);
+}
+);
+scissors.addEventListener("click", () => {
+    processGame(CC, "scissors")
+    console.log("You Choice is: scissors, The Computer's choice is:" + CC);
+}
+);
+
+
+
+
+
+// Five Games Logic
+// let humanScore = 0;
+// let computerScore = 0;
+// for (let i = 0; i < 5; i++) {
+//   console.log("Round:", i);
+//   let CC = getComputerChoice();
+//   let playerChoice = prompt("Choose rock, paper, or scissors:").toLowerCase();
+//   console.log("You Choice is: " + playerChoice + ", The Computer's choice is:" + CC);
+//   processGame(CC, playerChoice);
+// }
 
 
